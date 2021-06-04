@@ -26,9 +26,14 @@ variable "time_unit" {
   type = string
 }
 
-variable "notification" {
-  type    = list(string)
-  default = null
+variable "notifications" {
+  type = list(object({
+    threshold : number,
+    comparison_operator : string,
+    threshold_type : string,
+    notification_type : string,
+    subscriber_sns_topic_arns : list(string)
+  }))
 }
 
 variable "cost_filters" {

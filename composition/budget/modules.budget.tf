@@ -7,4 +7,5 @@ module "bugets" {
   time_period_end   = local.budget.time_period_end
   time_period_start = local.budget.time_period_start
   time_unit         = local.budget.time_unit
+  notifications     = local.budget.notifications
 }

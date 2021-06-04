@@ -11,43 +11,14 @@ resource "aws_budgets_budget" "budget" {
     Service = "Amazon Elastic Compute Cloud - Compute"
   }
 
-  notification {
-    comparison_operator        = "GREATER_THAN"
-    threshold                  = 100
-    threshold_type             = "PERCENTAGE"
-    notification_type          = "FORECASTED"
-    subscriber_email_addresses = ["test@example.com"]
-  }
-
-  notification {
-    comparison_operator        = "GREATER_THAN"
-    threshold                  = 20
-    threshold_type             = "PERCENTAGE"
-    notification_type          = "FORECASTED"
-    subscriber_email_addresses = ["test@example.com"]
-  }
-
-  notification {
-    comparison_operator        = "GREATER_THAN"
-    threshold                  = 40
-    threshold_type             = "PERCENTAGE"
-    notification_type          = "FORECASTED"
-    subscriber_email_addresses = ["test@example.com"]
-  }
-
-  notification {
-    comparison_operator        = "GREATER_THAN"
-    threshold                  = 60
-    threshold_type             = "PERCENTAGE"
-    notification_type          = "FORECASTED"
-    subscriber_email_addresses = ["test@example.com"]
-  }
-
-  notification {
-    comparison_operator        = "GREATER_THAN"
-    threshold                  = 80
-    threshold_type             = "PERCENTAGE"
-    notification_type          = "FORECASTED"
-    subscriber_email_addresses = ["test@example.com"]
+  dynamic "notification" {
+    for_each = var.notifications
+    content {
+      threshold                 = notification.value.threshold
+      comparison_operator       = notification.value.comparison_operator
+      threshold_type            = notification.value.threshold_type
+      notification_type         = notification.value.notification_type
+      subscriber_sns_topic_arns = notification.value.subscriber_sns_topic_arns
+    }
   }
 }
