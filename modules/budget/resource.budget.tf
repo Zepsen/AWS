@@ -7,10 +7,6 @@ resource "aws_budgets_budget" "budget" {
   time_period_start = var.time_period_start
   time_unit         = var.time_unit
 
-  cost_filters = {
-    Service = "Amazon Elastic Compute Cloud - Compute"
-  }
-
   dynamic "notification" {
     for_each = var.notifications
     content {

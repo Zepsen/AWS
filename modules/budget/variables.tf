@@ -35,8 +35,3 @@ variable "notifications" {
     subscriber_sns_topic_arns : list(string)
   }))
 }
-
-variable "cost_filters" {
-  type    = list(string)
-  default = null
-}

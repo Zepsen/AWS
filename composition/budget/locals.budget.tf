@@ -10,41 +10,40 @@ locals {
 
     notifications = [
       {
-        threshold                  = 100
-        comparison_operator        = "GREATER_THAN"
-        threshold_type             = "PERCENTAGE"
-        notification_type          = "FORECASTED"
-        subscriber_sns_topic_arns  = [module.sns_topic.arn]
+        threshold                 = 100
+        comparison_operator       = "GREATER_THAN"
+        threshold_type            = "PERCENTAGE"
+        notification_type         = "FORECASTED"
+        subscriber_sns_topic_arns = [module.sns_topic.arn]
       },
       {
-        threshold                  = 80
-        comparison_operator        = "GREATER_THAN"
-        threshold_type             = "PERCENTAGE"
-        notification_type          = "FORECASTED"
-        subscriber_sns_topic_arns  = [module.sns_topic.arn]
+        threshold                 = 80
+        comparison_operator       = "GREATER_THAN"
+        threshold_type            = "PERCENTAGE"
+        notification_type         = "FORECASTED"
+        subscriber_sns_topic_arns = [module.sns_topic.arn]
       },
       {
-        threshold                  = 60
-        comparison_operator        = "GREATER_THAN"
-        threshold_type             = "PERCENTAGE"
-        notification_type          = "FORECASTED"
-        subscriber_sns_topic_arns  = [module.sns_topic.arn]
+        threshold                 = 60
+        comparison_operator       = "GREATER_THAN"
+        threshold_type            = "PERCENTAGE"
+        notification_type         = "FORECASTED"
+        subscriber_sns_topic_arns = [module.sns_topic.arn]
       },
       {
-        threshold                  = 40
-        comparison_operator        = "GREATER_THAN"
-        threshold_type             = "PERCENTAGE"
-        notification_type          = "FORECASTED"
-        subscriber_sns_topic_arns  = [module.sns_topic.arn]
+        threshold                 = 40
+        comparison_operator       = "GREATER_THAN"
+        threshold_type            = "PERCENTAGE"
+        notification_type         = "FORECASTED"
+        subscriber_sns_topic_arns = [module.sns_topic.arn]
       },
       {
-        threshold                  = 20
-        comparison_operator        = "GREATER_THAN"
-        threshold_type             = "PERCENTAGE"
-        notification_type          = "FORECASTED"
-        subscriber_sns_topic_arns  = [module.sns_topic.arn]
+        threshold                 = 20
+        comparison_operator       = "GREATER_THAN"
+        threshold_type            = "PERCENTAGE"
+        notification_type         = "FORECASTED"
+        subscriber_sns_topic_arns = [module.sns_topic.arn]
       },
     ]
-
   }
 }
