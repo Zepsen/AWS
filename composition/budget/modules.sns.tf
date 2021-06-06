@@ -16,3 +16,9 @@ module "sns_snd_subscription" {
   protocol  = local.sns.protocol
   endpoint  = local.sns.snd_endpoint
 }
+
+module "sns_policy" {
+  source = "../../modules/iam/sns_policy"
+  arn    = module.sns_topic.arn
+  policy = data.aws_iam_policy_document.sns_topic_policy.json
+}
