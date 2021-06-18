@@ -18,7 +18,7 @@ module "sns_snd_subscription" {
 }
 
 module "sns_policy" {
-  source = "../../modules/iam/sns_policy"
+  source = "../../modules/iam/policies/sns_topic"
   arn    = module.sns_topic.arn
   policy = data.aws_iam_policy_document.sns_topic_policy.json
 }
