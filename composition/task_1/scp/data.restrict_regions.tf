@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "restrict_regions" {
       variable = "aws:RequestedRegion"
 
       values = [
-        "eu-west-1"
+        "eu-west-1", "eu-west-2"
       ]
     }
   }
