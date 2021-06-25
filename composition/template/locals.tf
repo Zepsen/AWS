@@ -1,7 +1,6 @@
 locals {
-  names = {
-    full_access_ec2     = "FullAccessEC2"
-    full_access_s3      = "FullAccessS3"
-    read_only_access_s3 = "ReadOnlyAccessS3"
-  }
+  alias     = var.alias
+  region    = var.region
+  fst_email = var.fst_email
+  snd_email = var.snd_email
 }
