@@ -1,4 +1,4 @@
-/* output "ssh" {
+output "ssh" {
   value = "sudo ssh -i ./ssh-keys/ec2_ssh_key ubuntu@${module.ec2.public_dns}"
 }
 
@@ -12,7 +12,7 @@ output "ssh_2" {
 
 output "http_2" {
   value = "http://${module.ec2_without_ebs.public_ip}"
-} */
+}
 
 output "alb-url" {
     value = module.ec2_with_lb.dns_name

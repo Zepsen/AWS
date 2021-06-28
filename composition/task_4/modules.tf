@@ -7,7 +7,7 @@ module "sg-groups" {
   description = "Private secuirty group"
 }
 
-/* resource "aws_iam_instance_profile" "test_profile" {
+resource "aws_iam_instance_profile" "test_profile" {
   name = "test_profile"
   role = "FullAccessS3Role"
 }
@@ -30,7 +30,7 @@ module "ec2_without_ebs" {
   ami             = data.aws_ami.ubuntu.id
   security_groups = [module.sg-groups.name]
   ssh_key         = "ec2_ssh_key2"
-} */
+}
 
 module "ec2_with_lb" {
   source = "../../modules/ec2/alb"
