@@ -1,0 +1,4 @@
+
+module "module" {
+  source = "../../modules/"
+}
